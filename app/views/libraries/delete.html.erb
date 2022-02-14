@@ -1,0 +1,15 @@
+<%= link_to 'Back', libraries_path %>
+
+<div class="libraries delete">
+  <h2>Delete Library</h2>
+
+  <%= form_for(@library, :method => 'delete') do |f| %>
+
+    <p>Are you sure you want to permanently delete this library?</p>
+
+    <div class="form-buttons">
+      <%= f.submit("Delete Library") %>
+    </div>
+
+  <% end %>
+</div>

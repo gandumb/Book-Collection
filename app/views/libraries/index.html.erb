@@ -14,11 +14,11 @@
   <tbody>
     <% @libraries.each do |library| %>
       <tr>
-        <td><%= library.user_id %></td>
-        <td><%= library.book_id %></td>
+        <td><%= User.find(library.user_id).username %></td>
+        <td><%= Book.find(library.book_id).title %></td>
         <td><%= link_to 'Show', library %></td>
         <td><%= link_to 'Edit', edit_library_path(library) %></td>
-        <td><%= link_to 'Destroy', library, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', delete_library_path(library)%></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,6 +27,5 @@
 <br>
 
 <%= link_to 'New Library', new_library_path %>
-<%= link_to 'Books', books_path %>
 <%= link_to 'Users', users_path %>
-
+<%= link_to 'Books', books_path %>
